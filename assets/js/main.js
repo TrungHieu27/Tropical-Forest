@@ -15,3 +15,21 @@ function mobileMenu() {
 }
 
 hamburger.addEventListener('click', mobileMenu);
+
+// Scroll Top
+const btnScroll = document.querySelector('.btn-scroll');
+
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    btnScroll.style.display = "block";
+  } else {
+    btnScroll.style.display = "none";
+  }
+}
+
+function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  }
