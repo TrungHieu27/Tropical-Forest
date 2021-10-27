@@ -251,7 +251,7 @@ body {
   .nav .nav-navbar {
     position: absolute;
     top: 100%;
-    right: -102%;
+    left: -102%;
     width: 70%;
     flex-direction: column;
     padding: 10px 0 20px 30px;
@@ -261,7 +261,7 @@ body {
     z-index: 10;
   }
   .nav .nav-navbar.active {
-    right: 0;
+    left: 0;
   }
   .nav .nav-navbar > li {
     margin-bottom: 15px;
