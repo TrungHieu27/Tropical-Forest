@@ -1,0 +1,45 @@
+@import '_variables';
+@import '_mixin';
+
+.sales-2 {
+    position: relative;
+    & .sales-content {
+        position: absolute;
+        top: 15%;
+        left: 8%;
+        &-text {
+            color: $red;
+        }
+        & h4 {
+            margin: 5px 0 30px;
+            font-size: 2.25rem;
+            color: $darkGrey;
+        }
+        & a {
+            color: $darkGrey;
+            text-decoration: underline;
+        }
+    }
+    @include maxWidth(1023px) {
+        & .sales-item {
+            margin-bottom: 20px;
+            & img {
+                width: 100%;
+            }
+        }
+    }
+    @include maxWidth(767px) {
+        & .sales-item {
+            & p {
+                font-size: .75rem;
+            }
+            & h4 {
+                margin-bottom: 20px;
+                font-size: 1.5rem;
+            }
+            & a {
+                font-size: .75rem;
+            }
+        }
+    }
+}

@@ -1,0 +1,80 @@
+@import '_variables';
+@import '_mixin';
+
+.sales {
+    & .sale-item {
+        position: relative;
+        & img {
+            height: 499px;
+        }
+        & p {
+            position: absolute;
+            top: 4%;
+            left: 9%;
+            color: $red;
+        }
+        & h4 {
+            position: absolute;
+            top: 9%;
+            left: 9%;
+            font-size: 1.125rem;
+        }
+    
+        & a {
+            position: absolute;
+            top: 20%;
+            left: 9%;
+            font-size: 0.875rem;
+            color: $green;
+            text-decoration: underline;
+        }
+    
+        & .sale-text {
+            top: 85%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    
+        & .sale-title {
+            top: 91%;
+            left: 19%;
+            width: 100%;
+        }
+    }
+    @include maxWidth(1023px) {
+        & .sale-item {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+            & p {
+                left: 26%;
+
+            }
+            & h4 {
+                left: 26%;
+            }
+            & a {
+                left: 26%;
+            }
+            & .sale-title {
+                left: 33%;
+            }
+        }
+    }
+    @include maxWidth(767px) {
+        & .sale-item {
+            & p {
+                left: 8%;
+            }
+            & h4 {
+                left: 8%;
+            }
+            & a {
+                left: 8%;
+            }
+            & .sale-title {
+                left: 21%;
+            }
+        }
+    }
+}

@@ -1,0 +1,56 @@
+@import '_variables';
+@import '_mixin';
+
+.best-seller {
+    &-title h1 {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        font-size: 1.875rem;
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: -35%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 70px;
+            height: 4px;
+            @include bgc($green);
+        }
+    }
+    & .product-body {
+        display: block;
+        padding-top: 15px;
+        & .rates i {
+            &:not(:last-child) {
+                color: #FFC107;
+            }
+        }
+        &-title {
+            padding: 10px 0 20px;
+            font-size: .875rem;
+        }
+        &-price {
+            font-size: .875rem;
+            color: $green;
+        }
+    }
+    @include maxWidth(1023px) {
+        & .product-item {
+            margin-bottom: 30px;
+            & img {
+                width: 100%;
+            }
+        }
+    }
+    @include maxWidth(767px) {
+        &-title {
+            & h1 {
+                font-size: 1.25rem;
+                &::after {
+                    height: 3px;
+                }
+            }
+        }
+    }
+}

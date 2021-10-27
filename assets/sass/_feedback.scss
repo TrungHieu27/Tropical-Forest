@@ -1,0 +1,101 @@
+@import '_variables';
+@import 'mixin';
+
+.feedback {
+    position: relative;
+    margin-top: 63px;
+    height: 484px;
+    background: url('../img/Rectangle\ 14.png') top center / cover;
+    & h4 {
+        position: absolute;
+        top: 28%;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 1.875rem;
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: -35%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 70px;
+            height: 4px;
+            @include bgc($green)
+        }
+    }
+    &-content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
+        & p {
+            font-size: .875rem;
+            color: $darkGrey;
+        }
+    }
+    &-client {
+        display: flex;
+        position: absolute;
+        bottom: 18%;
+        left: 50%;
+        transform: translateX(-50%);
+        &-body {
+            padding-top: 4px;
+            padding-left: 20px;
+            & p {
+                font-size: .875rem;
+                color: $darkGrey;
+            }
+            & span {
+                font-size: .75rem;
+                color: $darkGrey;
+            }
+        }
+    }
+    @include maxWidth(1023px) {
+        height: 258px;
+        & h4 {
+            top: 10%;
+        }
+        &-content {
+            top: 35%;
+        }
+        &-client {
+            bottom: 5%;
+        }
+    }
+    @include maxWidth(767px) {
+        & h4 {
+            left: 19%;
+            transform: none;
+            font-size: 1.25rem;
+            &::after {
+                height: 3px;
+            }
+        }
+        &-content {
+            left: 0;
+            transform: none;
+            & p {
+                font-size: .75rem;
+            }
+        }
+        &-client {
+            bottom: 11%;
+            & img {
+                height: 40px;
+            }
+            &-body {
+                padding-top: 0;
+                padding-left: 10px;
+                & p {
+                    font-size: .75rem;
+                }
+                & span {
+                    font-size: .625rem;
+                }
+            }
+        }
+    }
+}

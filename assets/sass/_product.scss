@@ -1,0 +1,104 @@
+@import '_variables';
+@import '_mixin';
+
+.product {
+    &-title {
+        & h2 {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            font-size: 1.875rem;
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: -40%;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 70px;
+                height: 4px;
+                @include bgc($green);
+            }
+        }
+    }
+    & .nav-tabs {
+        display: flex;
+        justify-content: center;
+        margin: 0px 232.9px;
+        & .nav-link {
+            color: #000;
+            font-size: .875rem;
+        }
+        & .nav-link.active {
+            color: $green;
+        }
+    }
+    & .tab-content {
+        & .tab-pane {
+            display: none;
+            & .product-item {
+                margin-bottom: 30px;
+                & .product-body {
+                    display: block;
+                    padding-top: 15px;
+                    & .rates i {
+                        &:not(:last-child) {
+                            color: #FFC107;
+                        }
+                    }
+                    &-title {
+                        padding: 10px 0 20px;
+                        font-size: .875rem;
+                    }
+                    &-price {
+                        font-size: .875rem;
+                        color: $green;
+                    }
+                }
+            }
+            &-btn {
+                margin-top: 30px;
+                text-align: center;
+                & a {
+                    padding: 14px 44px;
+                    font-size: .875rem;
+                    color: #fff;
+                    @include bgc($green)
+                }
+            }
+        }
+        & .tab-pane.active {
+            display: block;
+        }
+    }
+    @include maxWidth(1023px) {
+        & .nav-tabs {
+            margin: 0;
+        }
+        & .product-item {
+            & img {
+                width: 100%;
+            }
+        }
+    }
+    @include maxWidth(767px) {
+        & .product-title {
+            & h2 {
+                font-size: 1.25rem;
+                &::after {
+                    height: 3px;
+                }
+            }
+        }
+        & .nav-tabs {
+            flex-direction: column;
+        }
+        & .tab-content {
+            & .tab-pane-btn {
+                & a {
+                    padding: 10px 30px;
+                    font-size: .75rem;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,153 @@
+@import '_variables';
+@import '_mixin';
+
+.nav {
+    position: relative;
+    &-navbar {
+        display: flex;
+        justify-content: space-between;
+        & li {
+            display: inline-block;
+            & a {
+                color: #000;
+            }
+        }
+    }
+    &-icon {
+        display: flex;
+        justify-content: flex-end;
+        & i {
+            position: relative;
+            margin-left: 25px;
+            cursor: pointer;
+        }
+        & p {
+            position: absolute;
+            right: 5px;
+            bottom: 9px;
+            padding: .5px 5px;
+            font-size: 0.688rem;
+            color: #fff;
+            border-radius: 50%;
+            @include bgc($red)
+        }
+    }
+    & .search-box {
+        position: absolute;
+        bottom: -39%;
+        right: 0;
+        display: none;
+        & input {
+            position: absolute;
+            top: 0;
+            right: 100%;
+            padding: 11px 70px 11px 16px;
+            font-size: .875rem;
+            color: #fff;
+            border: none;
+            outline: none;
+            background: #1a1a1a;
+            border: 1px solid #666;
+            &::placeholder {
+                color: #fff;
+            }
+        }
+        & i {
+            padding: 11.6px 11px;
+            color: #fff;
+            background: #1a1a1a;
+            border: 1px solid #666;
+            cursor: pointer;
+        }
+    }
+    & .show-searchInput {
+        display: block;
+        animation: searchBoxFadeIn ease .3s;
+    }
+    
+    @include minWidth(1024px) {
+        & .icon-menu {
+            display: none;
+        }
+    }
+    @include maxWidth(1023px) {
+        & .nav-logo {
+            & img {
+                height: 50px;
+            }
+        }
+        & .nav-navbar {
+            position: absolute;
+            top: 100%;
+            left: -102%;
+            flex-direction: column;
+            padding: 10px 16px 20px;
+            background: #fff;
+            transition: .3s;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+            z-index: 10;
+            &.active {
+                left: 0;
+            }
+            & li {
+                padding: 5px 0;
+                border-bottom: 1px solid #000;
+                & a {
+                    display: block;
+                }
+            }
+        }
+        & .nav-icon {
+            margin-right: 31px;
+            & i:not([class*='fa-search']) {
+                display: none;
+            }
+            & p {
+                display: none;
+            }
+        }
+        & .icon-menu {
+            position: absolute;
+            bottom: 34%;
+            right: 5%;
+        }
+        & .search-box {
+            bottom: -50%;
+        }
+    }
+    @include maxWidth(767px) {
+        & .nav-logo {
+            & img {
+                height: 40px;
+            }
+        }
+        & .icon-menu {
+            bottom: 30%;
+        }
+        & .nav-icon {
+            position: absolute;
+            top: 40%;
+            right: 0;
+        }
+        & .search-box {
+            bottom: -43%;
+            & input {
+                padding: 6px 70px 6px 16px;
+            }
+            & i {
+                padding: 6.5px 8px;
+            }
+        }
+    }
+}
+@keyframes searchBoxFadeIn {
+    from {
+        right: -16%;
+        opacity: 0;
+    }
+
+    to {
+        right: 0;
+        opacity: 1;
+    }
+}

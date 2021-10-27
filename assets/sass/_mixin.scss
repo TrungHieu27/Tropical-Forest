@@ -1,0 +1,15 @@
+@mixin bgc($bgcolor) {
+    background-color: $bgcolor;
+}
+
+@mixin maxWidth($value) {
+    @media (max-width: $value) {
+        @content;
+    }
+}
+
+@mixin minWidth($value) {
+    @media (min-width: $value) {
+        @content;
+    }
+}

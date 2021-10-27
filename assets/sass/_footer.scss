@@ -1,0 +1,92 @@
+@import '_variables';
+@import '_mixin';
+
+.footer {
+    position: relative;
+    height: 426px;
+    background: url('../img/Rectangle\ 22.png') top center / cover;
+    & .container {
+        border-bottom: 1px solid #827E7E;
+    }
+    &-about {
+        & p {
+            margin: 15px 0 10px;
+            font-size: .875rem;
+            text-transform: uppercase;
+        }
+        & .social {
+            display: flex;
+            flex-direction: row;
+            & i {
+                position: relative;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-right: 10px;
+                width: 31px;
+                height: 31px;
+                color: #fff;
+                border-radius: 50%;
+                z-index: 1;
+                @include bgc($darkGrey);
+                &::after {
+                    content: "";
+                    position: absolute;
+                    top: -2px;
+                    left: -2.3px;
+                    width: 35.5px;
+                    height: 35px;
+                    border: 1px solid #515151;
+                    border-radius: 50%;
+                }
+            }
+        }
+    }
+    & .footer-title {
+        margin-bottom: 22px;
+        font-size: .875rem;
+        font-weight: bolder;
+    }
+    & .responsive-iframe {
+        width: 219px;
+        height: 130px;
+    }
+    & ul {
+        list-style: none;
+        & li {
+            margin-bottom: 10px;
+            & a {
+                font-size: .875rem;
+                color: $darkGrey;
+            }
+        }
+    }
+    @include maxWidth(1023px) {
+        &-about {
+            & .social {
+                & i {
+                    &::after {
+                        width: 35px;
+                        height: 35px;
+                    }
+                }
+            }
+        }
+        height: 100%;
+        & .col-md-6 {
+            margin-bottom: 30px;
+        }
+        & .responsive-iframe {
+            width: 335px;
+            height: 117px;
+        }
+    }
+    @include maxWidth(767px) {
+        
+        & .footer-extend {
+            position: absolute;
+            bottom: 0;
+            right: 19%;
+        }
+    }
+}

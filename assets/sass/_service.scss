@@ -1,0 +1,37 @@
+@import '_variables';
+@import '_mixin';
+
+.service {
+    &-item {
+        display: flex;
+        justify-content: flex-end;
+        
+        & img {
+            margin-right: 14px;
+            height: 35px;
+            object-fit: contain;
+        }
+        & .service-title {
+            font-size: 0.875rem;
+            color: $darkGrey;
+        }
+        & .service-desc {
+            font-size: 0.68rem;
+            color: $grey;
+        }
+    }
+    @include maxWidth(1023px) {
+        & .row {
+            margin-left: 90px;
+            & .service-item {
+                justify-content: flex-start;
+                margin-bottom: 15px;
+            }
+        }
+    }
+    @include maxWidth(767px) {
+        & .row {
+            margin-left: 65px;
+        }
+    }
+}
