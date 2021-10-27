@@ -3,6 +3,7 @@
 
 .nav {
     position: relative;
+    background: #fff;
     &-navbar {
         display: flex;
         justify-content: space-between;
@@ -39,6 +40,7 @@
                 transform: scaleX(1);
             }
             &> a {
+                padding: 3px 0;
                 color: #000;
             }
         }
