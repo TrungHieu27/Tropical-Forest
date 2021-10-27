@@ -6,11 +6,12 @@ $(document).ready(function(){
 });
 
 // Mobile Menu
-const iconMenu = document.querySelector(".icon-menu");
+const hamburger = document.querySelector(".hamburger");
 const navMenu = document.querySelector(".nav-navbar");
 
 function mobileMenu() {
     navMenu.classList.toggle("active");
+    hamburger.classList.toggle("active");
 }
 
-iconMenu.addEventListener('click', mobileMenu);
+hamburger.addEventListener('click', mobileMenu);

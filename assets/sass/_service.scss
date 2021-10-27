@@ -32,6 +32,11 @@
     @include maxWidth(767px) {
         & .row {
             margin-left: 65px;
+            & .service-item {
+                &:first-child {
+                    padding-top: 40px;
+                }
+            }
         }
     }
 }
