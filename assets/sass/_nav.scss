@@ -137,6 +137,7 @@
                     box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
                     transform: scale(0);
                     transition: transform .3s ease;
+                    z-index: 1;
                     & li {
                         display: block;
                         padding: 5px 0;

@@ -1,1 +1,266 @@
-@import '_reset';
+.introduce {
+    background: #f8f9fa;
+    .content {
+        background: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+        & .about {
+            position: relative;
+            padding-bottom: 50px;
+            & img {
+                transform: scale(1);
+                transition: transform .5s ease-in-out;
+                &:hover {
+                    transform: scale(1.05);
+                }
+            }
+            &-content {
+                position: absolute;
+                top: 27%;
+                left: 2%;
+                width: 430px;
+                & h2 {
+                    font-size: 1.688rem;
+                    margin-bottom: 30px;
+                } 
+                & p {
+                    margin-bottom: 15px;
+                    color: $darkGrey;
+                    text-align: justify;
+                }
+            }
+        }
+        & .trend {
+            position: relative;
+            padding-bottom: 50px;
+            &-title {
+                display: flex;
+                justify-content: center;
+                text-align: center;
+                margin-bottom: 20px;
+                & h3 {
+                    font-size: 1.688rem;
+                }
+            }
+            & img {
+                transition: transform .5s ease;
+                &:hover {
+                    transform: scale(1.05);
+                }
+            }
+            &-content {
+                position: absolute;
+                top: 30%;
+                right: 3.5%;
+                width: 515px;
+                text-align: justify;
+                color: $darkGrey;
+            }
+            & .mobile-content-list {
+                display: none;
+            }
+        }
+        & .content-mobile {
+            display: none;
+        }
+        & .connect {
+            padding-bottom: 70px;
+            &-title {
+                display: flex;
+                justify-content: center;
+                text-align: center;
+                margin-bottom: 50px;
+                & h3 {
+                    font-size: 1.688rem;
+                }
+            }
+            & img {
+                width: 100%;
+                transition: transform 2s ease;
+                &:hover {
+                    transform: scale(1.3)
+                }
+            }
+            & .connect-content {
+                padding-right: 16px;
+                text-align: justify;
+                color: $darkGrey;
+            }
+        }
+        & .treeman {
+            padding-bottom: 50px;
+            &-title {
+                display: flex;
+                justify-content: center;
+                & h3 {
+                    font-size: 1.688rem;
+                }
+            }
+            &-content {
+                padding: 0 240px;
+                & p {
+                    text-align: center;
+                    color: $darkGrey;
+                }
+            }
+        }
+    }
+    @include maxWidth(1023px) {
+        & .content {
+            & .about-content {
+                width: 270px;
+                & h2 {
+                    font-size: 1rem;
+                    margin-bottom: 10px;
+                }
+                & p {
+                    margin-bottom: 10px;
+                    font-size: .625rem;
+                }
+                & h5 {
+                    font-size: .75rem;
+                }
+            }
+            & .trend {
+                &-title {
+                    & h3 {
+                        font-size: 1.25rem;
+                    }
+                }
+                &-content {
+                    top: 28%;
+                    right: 5%;
+                    width: 300px;
+                    & p {
+                        font-size: .625rem;
+                    }
+                }
+            }
+            & .connect {
+                &-title {
+                    & h3 {
+                        font-size: 1rem;
+                    }
+                }
+                &-content {
+                    & p {
+                        font-size: .625rem;
+                    }
+                }
+            }
+            & .treeman {
+                &-title {
+                    & h3 {
+                        font-size: 1rem;
+                    }
+                }
+                &-content {
+                    padding: 0 150px;
+                    & p {
+                        font-size: .625rem;
+                    }
+                }
+            }
+        }
+    }
+    @include maxWidth(767px) {
+        .sub-header {
+            padding: 10px 0;
+            & a {
+                font-size: .75rem;
+            }
+        }
+        .content {
+            & .about {
+                display: none;
+            }
+            & .trend {
+                padding-top: 20px;
+                & img {
+                    display: none;
+                }
+                &-content {
+                    display: none;
+                }
+                & .mobile-content-list {
+                    display: block;
+                    & img {
+                        display: block;
+                        margin: 0 auto;
+                    }
+                    & .item-body {
+                        margin: 5px 16px 0;
+                        padding: 10px 10px 0;
+                        border-top: 1px solid $darkGrey;
+                        & p {
+                            font-size: .875rem;
+                            color: $darkGrey;
+                            text-align: justify;
+                        }
+                    }
+                    & .slick-dots {
+                        list-style: none;
+                        display: flex;
+                        justify-content: center;
+                        padding-top: 20px;
+                        & button {
+                            margin: 0 5px;
+                            width: 10px;
+                            height: 10px;
+                            border-radius: 50%;
+                            border: none;
+                            color: transparent;
+                            background: #c4c4c4;
+                            cursor: pointer;
+                        }
+                        & .slick-active {
+                            & button {
+                                background: #000;
+                            }
+                        }
+                    }
+                }
+            }
+            & .content-mobile {
+                display: block;
+                &-text {
+                    padding: 20px 16px;
+                    & p {
+                        font-size: .875rem;
+                        color: $darkGrey;
+                        text-align: justify;
+                    }
+                }
+            }
+            & .connect {
+                &-title {
+                    margin-top: 20px;
+                    margin-bottom: 20px;
+                    & h3 {
+                        font-size: 1.125rem;
+                    }
+                }
+                &-content {
+                    padding-top: 20px;
+                    padding-left: 16px;
+                    & p {
+                        font-size: .875rem;
+                    }
+                }
+            }
+            & .treeman {
+                &-title {
+                    & h3 {
+                        font-size: 1.125rem;
+                    }
+                }
+                &-content {
+                    padding: 10px 16px 0;
+                    & p {
+                        font-size: .875rem;
+                    }
+                }
+            }
+        }
+    }
+    
+}
