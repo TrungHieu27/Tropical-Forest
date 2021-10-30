@@ -16,6 +16,16 @@ function mobileMenu() {
 
 hamburger.addEventListener('click', mobileMenu);
 
+// Close menu when click a link
+const navItem = document.querySelectorAll(".nav-navbar> li> a[href*='./']");
+
+navItem.forEach(n => n.addEventListener("click", closeMenu));
+
+function closeMenu() {
+  hamburger.classList.remove("active");
+  navMenu.classList.remove("active");
+}
+
 // Scroll Top
 const btnScroll = document.querySelector('.btn-scroll');
 
